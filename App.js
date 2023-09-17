@@ -13,6 +13,11 @@ const Home = () => {
     const [kilowattHourUsed, setKilowattHourUsed] = useState(0);
     const [totalMonthlyBill, setTotalMonthlyBill] = useState(0);
 
+	const [kiloWattPerHour, setKiloWattPerHour] = useState(0);
+    const [rateSum, setRateSum] = useState(0);
+    const [totalBilling, setTotalBilling] = useState(0);
+    const [excessBilling, setExcessBilling] = useState(0);
+
     const handlePress = () => {
 
         const kiloWattPerHour = parseFloat(totalMonthlyBill).toFixed(2) / parseFloat(kilowattHourUsed).toFixed(2);
@@ -20,15 +25,16 @@ const Home = () => {
         const totalBilling = parseFloat(rateSum).toFixed(2) * parseFloat(kiloWattPerHour).toFixed(2);
         const excessBilling = parseFloat(totalMonthlyBill).toFixed(2) - parseFloat(totalBilling).toFixed(2);
 
-        console.log('kiloWatt Per Hour => ', kiloWattPerHour);
-        console.log('Sum Rate => ', rateSum);
-        console.log('Your Total Bill => ', totalBilling);
-        console.log('Excess Bill => ', excessBilling);
+		setKiloWattPerHour(kiloWattPerHour);
+		setRateSum(rateSum);
+		setTotalBilling(totalBilling);
+		setExcessBilling(excessBilling);
+
     };
 
     return (
         <SafeAreaView className="mt-10">
-			<Card> 
+			<Card style={{borderRadius: 3}}> 
 				<Text className="font-bold mt-3 pl-2">Previous Reading:</Text>
 				<Input
 					style={{ width: "100%" }}
@@ -57,6 +63,12 @@ const Home = () => {
 				<Button onPress={handlePress} className="mt-3 pl-2">
 					<Text className="font-bold text-white">Get Result</Text>
 				</Button>
+			</Card>
+			<Card>
+				<Text className="font-bold mt-3 pl-2">kiloWatt Per Hour: {kiloWattPerHour}</Text>
+				<Text className="font-bold mt-3 pl-2">Sum Rate: {rateSum}</Text>
+				<Text className="font-bold mt-3 pl-2">Your Total Bill: {totalBilling}</Text>
+				<Text className="font-bold mt-3 pl-2">Excess Bill: {excessBilling}</Text>
 			</Card>
         </SafeAreaView>
     )
