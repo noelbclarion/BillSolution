@@ -31,7 +31,7 @@ const Home = () => {
 		setExcessBilling(excessBilling);
 
     };
-
+	
     return (
         <SafeAreaView className="mt-10">
 			<Card style={{borderRadius: 3}}> 
