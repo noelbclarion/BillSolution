@@ -235,10 +235,11 @@ const Home = () => {
                         }}
                         containerStyle={{
                             marginTop: 8,
+                                width: '100%',
                         }}
                     >
-                        <Text className="text-base font-bold text-white">
-                            Calculate My Bill
+                        <Text className="text-base font-bold text-white" style={{color: '#ccc'}}>
+                            Calculate Bill
                         </Text>
                     </Button>
                 </Card>
@@ -250,7 +251,6 @@ const Home = () => {
                         <View
                             className="mt-5 rounded-2xl bg-slate-900 p-6"
                             style={{
-                                shadowColor: '#000',
                                 shadowOffset: {
                                     width: 0,
                                     height: 4,
@@ -263,21 +263,20 @@ const Home = () => {
                                 marginTop: 16,
                                 padding: 20,
                                 borderWidth: 0,
-                                shadowColor: '#000',
+                                shadowColor: '#fff',
                                 shadowOffset: {
                                     width: 0,
                                     height: 3,
                                 },
                                 shadowOpacity: 0.06,
                                 shadowRadius: 8,
-                                elevation: 3,
                             }}
                         >
-                            <Text className="text-sm font-medium text-slate-400">
-                                ESTIMATED ELECTRICITY BILL
+                            <Text className="text-sm font-medium text-slate-400" style={{color: '#ccc'}}>
+                                MY ELECTRICITY BILL
                             </Text>
 
-                            <Text className="mt-2 text-4xl font-bold text-white">
+                            <Text className="mt-2 text-4xl font-bold text-white" style={{color: '#ccc'}}>
                                 {formatCurrency(totalBilling)}
                             </Text>
 
@@ -285,21 +284,21 @@ const Home = () => {
 
                             <View className="mt-4 flex-row justify-between">
                                 <View>
-                                    <Text className="text-xs text-slate-400">
+                                    <Text className="text-xs text-slate-400" style={{color: '#ccc'}}>
                                         Consumption
                                     </Text>
 
-                                    <Text className="mt-1 text-base font-semibold text-white">
+                                    <Text className="mt-1 text-base font-semibold text-white" style={{color: '#ccc'}}>
                                         {rateSum.toFixed(2)} kWh
                                     </Text>
                                 </View>
 
                                 <View className="items-end">
-                                    <Text className="text-xs text-slate-400">
+                                    <Text className="text-xs text-slate-400" style={{color: '#ccc'}}>
                                         Rate
                                     </Text>
 
-                                    <Text className="mt-1 text-base font-semibold text-white">
+                                    <Text className="mt-1 text-base font-semibold text-white" style={{color: '#ccc'}}>
                                         {formatCurrency(kiloWattPerHour)} / kWh
                                     </Text>
                                 </View>
